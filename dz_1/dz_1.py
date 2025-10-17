@@ -18,8 +18,8 @@ plt.show()
 # 3. реализуйте алгоритм гамма коррекции с параметром гамма <1, >1.
 print("3. Гамма-коррекция:")
 
-gamma_05 = np.uint8(((image_gray / 255.0) ** 0.5) * 255)  # gamma < 1
-gamma_15 = np.uint8(((image_gray / 255.0) ** 1.5) * 255)  # gamma > 1
+gamma_05 = np.uint8(((image_gray / 255.0) ** 0.5) * 255)
+gamma_15 = np.uint8(((image_gray / 255.0) ** 1.5) * 255)
 
 plt.figure(figsize=(12, 4))
 plt.subplot(1, 3, 1)

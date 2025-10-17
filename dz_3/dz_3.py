@@ -44,7 +44,7 @@ road_mask = thresh_adaptive == 0
 image_road = image.copy()
 image_road[road_mask] = [0, 255, 0]
 
-# Визуализация результатов
+
 plt.figure(figsize=(12, 8))
 
 plt.subplot(2, 2, 1)
