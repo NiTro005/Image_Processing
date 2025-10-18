@@ -2,7 +2,6 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-# Загрузка изображения
 image = cv2.imread('oranges_1.jpg')
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -43,7 +42,7 @@ def region_growing(image, seed_point, homo_fun, r, T):
     return mask * 255
 
 
-# Параметры для тестирования
+
 seed_point = (100, 100)
 parameters = [(1, 10), (1, 20), (2, 15), (2, 25)]
 
