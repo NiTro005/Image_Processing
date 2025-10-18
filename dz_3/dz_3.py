@@ -3,6 +3,8 @@ import cv2
 import matplotlib.pyplot as plt
 import math
 
+from skimage.metrics import structural_similarity, mean_squared_error
+
 image = cv2.imread('sar_3.jpg')
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -69,3 +71,18 @@ plt.axis('off')
 
 plt.tight_layout()
 plt.show()
+
+mse_otsu = mean_squared_error(image_gray, thresh_otsu)
+mse_adaptive = mean_squared_error(image_gray, thresh_adaptive)
+
+ssim_otsu = structural_similarity(image_gray, thresh_otsu)
+ssim_adaptive = structural_similarity(image_gray, thresh_adaptive)
+
+if ssim_otsu > ssim_adaptive:
+    best_method = "Оцу"
+    best_ssim = ssim_otsu
+else:
+    best_method = "Адаптивная"
+    best_ssim = ssim_adaptive
+
+print(f"Лучший метод: {best_method} (SSIM={best_ssim:.4f})")
